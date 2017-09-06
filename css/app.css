@@ -1,0 +1,23 @@
+@charset 'utf-8'
+
+body{
+	margin: 0;
+}
+ul{
+	padding:0;
+}
+p{
+	margin: 10px;
+	padding: 3px;
+	background: green;
+}
+h2{
+	margin: 10px;
+	padding: 3px;
+	background: green;
+}
+
+
+
+
+

@@ -1,0 +1,22 @@
+3.打开node_modules\gulp-rev\index.js
+
+第133行 manifest[originalFile] = revisionedFile;
+更新为: manifest[originalFile] = originalFile + '?v=' + file.revHash;
+
+4.打开node_modules\gulp-rev\node_modules\rev-path\index.js
+
+10行 return filename + '-' + hash + ext;
+更新为: return filename + ext;
+
+5.打开node_modules\gulp-rev-collector\index.js
+
+31行 if ( path.basename(json[key]).replace(new RegExp( opts.revSuffix ), '' ) !== path.basename(key) ) {
+更新为: if ( path.basename(json[key]).split('?')[0] !== path.basename(key) ) {
+
+注：修改完node_modules\gulp-rev\index.js与node_modules\gulp-rev-collector\index.js 就已达到效果
+
+　　另外附上es6的node_modules\gulp-rev-collector\index.js修改方法：
+
+第40行 let cleanReplacement =  path.basename(json[key]).replace(new RegExp( opts.revSuffix ), '' );
+　　更新为 let cleanReplacement =  path.basename(json[key]).split('?')[0];
+
