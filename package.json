@@ -11,6 +11,7 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-rev": "^8.0.0",
+    "gulp-rev-append": "^0.1.8",
     "gulp-rev-collector": "^1.2.2",
     "run-sequence": "^2.1.0"
   }
